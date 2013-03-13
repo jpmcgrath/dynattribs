@@ -1,0 +1,77 @@
+= Dynattribs (Dynamic Attributes)
+Dynattribs makes it easy to declare dynamic attributes in ActiveRecord classes.
+
+== Overview
+
+The Dynattribs Gem (Dyanmic Attributes) provide a database backed attributes to 
+ActiveRecord::Base classes, without having to declare table columns for each 
+attribute. A bit of NoSQL data flexibility for traditional database backed 
+ActiveRecord classes.
+
+The dynamic attributes are stored as a JSON encoded Hash, and can be 
+persisted into any field that can store text data.
+
+== Installation
+
+You can use the Dynattribs in your Rails project by including the following in your Gemfile:
+
+  gem 'dynattribs'
+  
+== Usage
+ 
+To use Dynattribs you need to include the mixin in your class definition, preferably at the top.
+
+To define the names of the dynamic attributes use the "dynamic_attr_accessor"
+method. This method takes two of more arguments. The first argument is the name
+of the database field that the dynamic attributes will be persisted to. The other
+arguments are the names of the dynamic attributes. It is meant to be used in a
+similar way to the familure "attr_accessor" method
+
+
+=== Example
+The following example defines a dynamic "info" field for the MyClass class, with 
+the new info field's data being persisted to the "extra_data" database field.
+ 
+  class MyClass < < ActiveRecord::Base
+    include Dynattribs
+     
+    dynamic_attr_accessor :extra_data, :info
+  end
+
+=== Database
+The dynamic attributes are stored converted to a JSON encoded string before storing
+to the nominated database field. Therefore, you will need to add a string column
+to the table of any class you wish to add dynamic attributes too.
+
+A String field would work, but a "text" field would be best due to the large amount 
+of data that could be stored in the dynamic attributes.
+
+To add the new column, create a migration, e.g.
+
+  rails g migration add_model_dynamic_attribute
+
+And modify the migration to look something like this:
+
+  class AddModelDynamicAttribute < ActiveRecord::Migration
+    def change
+      add_column :models, :dynamic_attribs, :text
+    end
+  end  
+
+== In The Wild
+
+Shortener is used in a number of production systems:
+
+{Capstory - Private Group Photo Albums }[http://www.capstory.com/]
+
+{Authic - A Local shopping Sales Notification Service}[http://www.authic.com]
+
+If you are using Dynattribs in your project and would like to be added to this list, please get in touch!
+
+== Contributing
+
+Contributions are very welcome. Please ensure all pull requests include suitable test coverage and all tests are passing.
+
+== Authors
+
+* {James McGrath}[https://github.com/jpmcgrath]
