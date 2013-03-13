@@ -60,7 +60,7 @@ And modify the migration to look something like this:
 
 == In The Wild
 
-Shortener is used in a number of production systems:
+Dynattribs is used in a number of production systems:
 
 {Capstory - Private Group Photo Albums }[http://www.capstory.com/]
 
@@ -75,3 +75,7 @@ Contributions are very welcome. Please ensure all pull requests include suitable
 == Authors
 
 * {James McGrath}[https://github.com/jpmcgrath]
+
+== Licence
+
+This code is licensed under the MIT license. See MIT-LICENCE for more details.
