@@ -3,7 +3,7 @@ Dynattribs makes it easy to declare dynamic attributes in ActiveRecord classes.
 
 == Overview
 
-The Dynattribs Gem (Dyanmic Attributes) provide a database backed attributes to 
+The Dynattribs Gem (Dyanmic Attributes) provides database backed attributes to 
 ActiveRecord::Base classes, without having to declare table columns for each 
 attribute. A bit of NoSQL data flexibility for traditional database backed 
 ActiveRecord classes.
@@ -64,7 +64,7 @@ Dynattribs is used in a number of production systems:
 
 {Capstory - Private Group Photo Albums }[http://www.capstory.com/]
 
-{Authic - A Local shopping Sales Notification Service}[http://www.authic.com]
+{Authic - Sign in and sign up screens for startups}[http://www.authic.com]
 
 If you are using Dynattribs in your project and would like to be added to this list, please get in touch!
 

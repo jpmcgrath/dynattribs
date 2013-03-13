@@ -11,7 +11,7 @@ Gem::Specification.new do |s|
   s.platform                  = Gem::Platform::RUBY
   s.authors                   = [ "James P. McGrath" ]
   s.email                     = [ "gems@jamespmcgrath.com" ]
-  s.homepage                  = "http://jamespmcgrath.com/projects/dynattribs"
+  s.homepage                  = "http://jamespmcgrath.com/projects/dynattribs-dynamic-attributes-gem/"
   s.rubyforge_project         = "dynattribs"
   s.required_rubygems_version = "> 1.3.6"
   #s.add_dependency "rails", ">= 3.0.7"
